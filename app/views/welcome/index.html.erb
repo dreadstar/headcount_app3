@@ -1,0 +1,85 @@
+
+<script type="text/x-handlebars" data-template-name="location-list">
+<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+{{#if length}}
+<section id="main">
+{{#if canToggle}}
+{{input type="checkbox" id="toggle-all" checked=allTodos.allAreDone}}
+{{/if}}
+<ul id="todo-list">
+{{#each}}
+<li {{bind-attr class="isCompleted:completed isEditing:editing"}}>
+{{#if isEditing}}
+{{todo-input type="text" class="edit" value=bufferedTitle focus-out="doneEditing" insert-newline="doneEditing" escape-press="cancelEditing"}}
+{{else}}
+{{input type="checkbox" class="toggle" checked=isCompleted}}
+<label {{action "editTodo" on="doubleClick"}}>{{title}}</label>
+<button {{action "removeTodo"}} class="destroy"></button>
+{{/if}}
+</li>
+{{/each}}
+</ul>
+</section>
+{{/if}}
+</script>
+<script type="text/x-handlebars" data-template-name="headcount">
+<section id="headcountapp">
+<header id="header">
+<h1>CrowdSenz</h1>
+{{todo-input id="new-todo" type="text" value=newTitle action="createTodo" placeholder="Where do you wanna party?"}}
+</header>
+{{outlet}}
+{{#if length}}
+<footer id="footer">
+<span id="todo-count"><strong>{{remaining.length}}</strong> {{pluralize 'item' remaining.length}} left</span>
+<ul id="filters">
+<li>
+{{#link-to "headcount.index" activeClass="selected"}}All{{/link-to}}
+</li>
+<li>
+{{#link-to "headcount.favorite" activeClass="selected"}}Favorite{{/link-to}}
+</li>
+<li>
+{{#link-to "headcount.hottest" activeClass="selected"}}Hottest{{/link-to}}
+</li>
+<li>
+{{#link-to "headcount.coldest" activeClass="selected"}}coldest{{/link-to}}
+</li>
+</ul>
+{{#if completed.length}}
+<button id="clear-completed" {{action "clearCompleted"}}>
+Clear completed ({{completed.length}})
+</button>
+{{/if}}
+</footer>
+{{/if}}
+</section>
+<footer id="info">
+<p>Double-click to edit a todo</p>
+<p>
+Created by
+<a href="https://github.com/dreadstar">Tyrone Thomas</a>,
+
+</p>
+<p>
+
+</p>
+
+</footer>
+</script>
+<!-- 
+<script src="bower_components/todomvc-common/base.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/handlebars/handlebars.js"></script>
+<script src="bower_components/ember/ember.js"></script>
+<script src="bower_components/ember-data/ember-data.js"></script>
+<script src="bower_components/ember-localstorage-adapter/localstorage_adapter.js"></script>
+<script src="js/app.js"></script>
+<script src="js/router.js"></script>
+<script src="js/models/todo.js"></script>
+<script src="js/controllers/todos_controller.js"></script>
+<script src="js/controllers/todos_list_controller.js"></script>
+<script src="js/controllers/todo_controller.js"></script>
+<script src="js/views/todo_input_component.js"></script>
+<script src="js/helpers/pluralize.js"></script>
+-->
