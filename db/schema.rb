@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723141335) do
+ActiveRecord::Schema.define(version: 20140727044156) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,47 @@ ActiveRecord::Schema.define(version: 20140723141335) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "doormsgs", force: true do |t|
+    t.integer  "door_id"
+    t.datetime "tstamp"
+    t.text     "msg"
+    t.integer  "counter_state"
+    t.string   "ip_addr"
+    t.string   "sensor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "doors", force: true do |t|
+    t.integer  "location_id"
+    t.boolean  "is_external"
+    t.integer  "flow_to"
+    t.integer  "flow_from"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "sensor_id"
+    t.string   "name"
+  end
+
+  create_table "locations", force: true do |t|
+    t.integer  "owner_id"
+    t.string   "name"
+    t.integer  "capactiy"
+    t.string   "yelp_url"
+    t.string   "site_url"
+    t.integer  "current_state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rooms", force: true do |t|
+    t.string   "location_id"
+    t.string   "name"
+    t.integer  "current_state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

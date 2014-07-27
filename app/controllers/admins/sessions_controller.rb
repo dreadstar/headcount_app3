@@ -1,5 +1,5 @@
 class admins::sessionsController < Devise::sessionsController
-	layout "admin"
+	# layout "admin"
   # def new
   #  super
   # end
@@ -11,28 +11,28 @@ class admins::sessionsController < Devise::sessionsController
   # def create
   #  super
   # end
-    def new
-      super
-    end
+  def new
+    super
+  end
 
-    def create
-      
-      super
-    end
+  def create
+    
+    super
+  end
 
-    def edit
-      super
-    end
+  def edit
+    super
+  end
 
-    def update
-      super
-    end
+  def update
+    super
+  end
 
-    def destroy
-      super
-    end
+  def destroy
+    super
+  end
 
-    def cancel
-      super
-    end
+  def cancel
+    super
+  end
 end

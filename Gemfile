@@ -43,4 +43,5 @@ gem 'pundit'
 gem 'ember-rails'
 gem 'ember-source'
 gem 'bower'
+gem 'haml-rails'
 

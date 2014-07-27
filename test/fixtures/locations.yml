@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_id: 1
+  name: MyString
+  capactiy: 1
+  yelp_url: MyString
+  site_url: MyString
+  current_state: 1
+
+two:
+  owner_id: 1
+  name: MyString
+  capactiy: 1
+  yelp_url: MyString
+  site_url: MyString
+  current_state: 1
