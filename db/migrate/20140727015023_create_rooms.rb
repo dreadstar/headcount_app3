@@ -4,7 +4,7 @@ class CreateRooms < ActiveRecord::Migration
       t.string :location_id
       t.string :name
       t.integer :current_state
-      t.integer :max_capacity
+      t.integer :max_cap
 
       t.timestamps
     end

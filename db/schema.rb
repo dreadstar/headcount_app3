@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140727044156) do
+ActiveRecord::Schema.define(version: 20140727022006) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -47,16 +47,17 @@ ActiveRecord::Schema.define(version: 20140727044156) do
     t.boolean  "is_external"
     t.integer  "flow_to"
     t.integer  "flow_from"
+    t.string   "name"
+    t.string   "sensor_id"
+    t.integer  "current_state"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "sensor_id"
-    t.string   "name"
   end
 
   create_table "locations", force: true do |t|
     t.integer  "owner_id"
     t.string   "name"
-    t.integer  "capactiy"
+    t.integer  "max_cap"
     t.string   "yelp_url"
     t.string   "site_url"
     t.integer  "current_state"
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(version: 20140727044156) do
     t.string   "location_id"
     t.string   "name"
     t.integer  "current_state"
+    t.integer  "max_cap"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

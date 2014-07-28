@@ -7,10 +7,10 @@
   = @location.site_url
 %p
   %strong Yelp Url:
-  = @location.yelp_url
--# %p
--#  %strong Capcity:
--#  = @location.max_capacity
+  = @location.yelp_url 
+%p
+  %strong Capcity:
+  = @location.max_cap
 %p
   %strong Current State:
   = @location.current_state
@@ -30,6 +30,8 @@
   %thead
     %tr
       %th Name
+      %th From
+      %th To
       %th current_state
       %th 
 
@@ -37,6 +39,16 @@
     - @doors.each do |door|
       %tr
         %td= door.name
+        %td
+          - if door.is_external || door.flow_from.nil?
+            Outside
+          - else 
+            =Room.find(door.flow_from).name
+        %td  
+          - if door.flow_to.nil?
+            Not Set
+          - else
+            =Room.find(door.flow_to).name
         %td= door.current_state
         %td
           = link_to 'View', location_door_path(@location, door)
@@ -54,6 +66,7 @@
   %thead
     %tr
       %th Name
+      %th Max Occupancy
       %th current_state
       %th 
 
@@ -61,6 +74,7 @@
     - @rooms.each do |room|
       %tr
         %td= room.name
+        %td= room.max_cap
         %td= room.current_state
         %td
           = link_to 'View', location_room_path(@location, room)

@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
 	
   before_action :find_location, except: [:index, :show]
-  before_action :find_room, only: [:create, :update, :destroy]
+  before_action :find_room, only: [ :update, :destroy]
 
   def new
     @room = Room.new
@@ -38,7 +38,7 @@ class RoomsController < ApplicationController
   private
 
   def rooms_params
-    params.require(:room).permit(:location_id, :name, :current_state, :capacity)
+    params.require(:room).permit( :name, :current_state, :max_cap)
   end
 
   def find_room
@@ -46,7 +46,7 @@ class RoomsController < ApplicationController
   end
 
   def find_location
-    @alocation = Location.find(params[:location_id])
+    @location ||= Location.find(params[:location_id])
   end
 
 

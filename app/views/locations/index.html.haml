@@ -15,7 +15,7 @@
     - @locations.each do |location|
       %tr
         %td= location.name
-        %td= location.max_capacity
+        %td= location.max_cap
         %td= location.current_state
         %td
           = link_to 'View', location_path(location)

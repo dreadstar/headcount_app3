@@ -1,3 +1,6 @@
+%p
+  %strong Location:
+  = @location.name
 = form_for([@location, @room]) do |f|
   - if @room.errors.any?
     #error_explanation
@@ -11,6 +14,10 @@
     = f.label :name
     %br/
     = f.text_field :name
+  .field
+    = f.label :max_cap
+    %br/
+    = f.text_field :max_cap
   .field
     = f.label :current_state
     %br/

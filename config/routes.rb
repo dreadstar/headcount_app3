@@ -80,10 +80,10 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
       resources :locations do
-        resources :doors, only: [:new, :create, :update] do
+        resources :doors, only: [:new, :show, :edit, :create, :update] do
           resources :doormsgs, only: [:index, :show]
         end
-        resources :rooms, only: [:new, :create, :update]
+        resources :rooms, only: [:new,:show, :edit, :create, :update]
       end
       resources :users
       resources :admins

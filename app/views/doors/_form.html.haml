@@ -1,3 +1,7 @@
+%p
+  %strong Location:
+  = @location.name
+
 = form_for([@location, @door]) do |f|
   - if @door.errors.any?
     #error_explanation
@@ -11,16 +15,26 @@
     = f.label :name
     %br/
     = f.text_field :name
-
   .field
-    = f.label :current_sate
+    = f.label :current_state
     %br/
-    = f.text_field :cureent_state
+    = f.text_field :current_state
   .field
-    = f.label :capacity
+    = f.label :sensor_id
     %br/
-    = f.text_field :capacity
-
+    = f.text_field :sensor_id
+  .field
+    = f.label :is_external
+    %br/
+    = f.check_box :is_external
+  .field
+    = f.label :flow_from
+    %br/
+    = f.collection_select( :flow_from, @location.rooms, :id, :name)
+  .field
+    = f.label :flow_to
+    %br/
+    = f.collection_select(:flow_to, @location.rooms, :id, :name)
 
   .actions
     = f.submit
