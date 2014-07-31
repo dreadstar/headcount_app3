@@ -50,3 +50,4 @@ gem "bower-rails", "~> 0.8.2"
 gem 'ember_script-rails', :github => 'ghempton/ember-script-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'handlebars_assets'
