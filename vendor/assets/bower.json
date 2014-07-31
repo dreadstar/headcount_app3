@@ -1,0 +1,9 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "bootstrap": "latest",
+    "ember": "latest",
+    "ember-data": "latest",
+    "chroma": "git@github.com:gka/chroma.js.git"
+  }
+}

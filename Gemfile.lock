@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/ghempton/ember-script-rails.git
+  revision: 9a1f09b0c53bf51c37c35490cc76cd7dfe461234
+  specs:
+    ember_script-rails (0.0.3)
+      ember_script (>= 0.0.4)
+      rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -30,12 +38,17 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (2.1.1.20140710)
+      execjs
     barber (0.4.2)
       ember-source
       execjs
       handlebars-source
     bcrypt (3.1.7)
+    bootstrap-sass (3.2.0.1)
+      sass (~> 3.2)
     bower (0.0.2)
+    bower-rails (0.8.2)
     builder (3.2.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -50,6 +63,7 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    ember (0.3.1)
     ember-data-source (1.0.0.beta.8)
       ember-source
     ember-rails (0.15.0)
@@ -63,6 +77,11 @@ GEM
       railties (>= 3.1)
     ember-source (1.6.1)
       handlebars-source (~> 1.0)
+    ember_script (0.0.5)
+      ember_script-source (>= 0.0.2)
+      execjs
+      tilt
+    ember_script-source (0.0.14)
     erubis (2.7.0)
     execjs (2.2.1)
     haml (4.0.5)
@@ -154,11 +173,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
+  bootstrap-sass (~> 3.2.0)
   bower
+  bower-rails (~> 0.8.2)
   coffee-rails (~> 4.0.0)
   devise
+  ember
+  ember-data-source
   ember-rails
   ember-source
+  ember_script-rails!
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails

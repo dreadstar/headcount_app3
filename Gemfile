@@ -40,8 +40,13 @@ gem 'spring',        group: :development
 gem 'mysql2'
 gem 'devise'
 gem 'pundit'
+gem 'ember'
 gem 'ember-rails'
 gem 'ember-source'
+gem 'ember-data-source'
 gem 'bower'
 gem 'haml-rails'
-
+gem "bower-rails", "~> 0.8.2"
+gem 'ember_script-rails', :github => 'ghempton/ember-script-rails'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
