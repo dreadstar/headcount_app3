@@ -8,6 +8,7 @@ class DoorsController < ApplicationController
 
   def edit
     @door = Door.find(params[:id])
+    @rooms= @location.rooms
   end
 
   def update
