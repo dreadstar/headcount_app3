@@ -1,7 +1,8 @@
 class LocationSerializer < ActiveModel::Serializer
-	def id
-    object.id.to_s
-  end
+	embed :ids, include: true
+	# def id
+  #  object.id.to_s
+  # end
  def fanscnt
   	object.users.size
  end

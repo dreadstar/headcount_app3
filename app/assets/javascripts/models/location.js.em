@@ -3,11 +3,11 @@
 Headcount.Location = DS.Model.extend({
 #  id: DS.attr 'integer'
   name: DS.attr 'string'
-  max_cap: DS.attr 'integer'
-  current_state: DS.attr 'integer'
-  yelp_url: DS.attr 'string'
-  site_url: DS.attr 'string'
-  fancnt: DS.attr 'integer'
+  maxCap: DS.attr 'number'
+  currentState: DS.attr 'number'
+  yelpUrl: DS.attr 'string'
+  siteUrl: DS.attr 'string'
+  fanscnt: DS.attr 'number'
 ###
   +computed max_cap current_state
   heat: ->
