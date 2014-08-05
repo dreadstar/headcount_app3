@@ -1,10 +1,14 @@
 
 'use strict'
 Headcount.Location = DS.Model.extend({
-  id: DS.attr 'integer'
+#  id: DS.attr 'integer'
   name: DS.attr 'string'
   max_cap: DS.attr 'integer'
   current_state: DS.attr 'integer'
+  yelp_url: DS.attr 'string'
+  site_url: DS.attr 'string'
+  fancnt: DS.attr 'integer'
+###
   +computed max_cap current_state
   heat: ->
     cs=this.get 'current_state'
@@ -15,7 +19,8 @@ Headcount.Location = DS.Model.extend({
     return ht
   +computed heat
   heatcolor: ->
-    hc=Ember.computed.alias 'controllers.headcount'
+    hc=Ember.computed.alias 'controllers.locations'
     ht=this.get 'heat'
     return hc.colorMap(ht).hex
+###
 })

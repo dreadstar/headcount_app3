@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'admin/index'
-
+  resources :locations, only: [ :index]
   # delete '/admins/sign_out' => 'devise/sessions#destroy'
   # get '/admins/sign_out' => 'devise/sessions#destroy'
   # devise_for :admins, controllers: { sessions: "admins/sessions" }

@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    render json: @locations, each_serializer: LocationSerializer
   end
 
   # GET /locations/1
@@ -13,6 +14,7 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
     @doors = @location.doors
     @rooms = @location.rooms
+
   end
 
   # GET /locations/new

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140727022006) do
+ActiveRecord::Schema.define(version: 20140801222544) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -70,6 +70,14 @@ ActiveRecord::Schema.define(version: 20140727022006) do
     t.string   "name"
     t.integer  "current_state"
     t.integer  "max_cap"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_location_favs", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "location_id"
+    t.datetime "tstamp"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

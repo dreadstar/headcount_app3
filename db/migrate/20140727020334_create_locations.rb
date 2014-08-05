@@ -7,6 +7,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :yelp_url
       t.string :site_url
       t.integer :current_state
+      t.boolean :is_active
 
       t.timestamps
     end

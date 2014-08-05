@@ -1,26 +1,19 @@
 
 'use strict';
 Headcount.LocationController = Ember.ObjectController.extend({
-  isEditing: false
+#  isEditing: false
 
-  bufferedTitle: Ember.computed.oneWay 'title' 
+#  bufferedTitle: Ember.computed.oneWay 'title' 
 
   actions: {
-    editLocation: ->
-      this.set 'isEditing' true
-      this.set 'bufferedTitle', bufferedTitle
-      this.set 'isEditing', false
-    cancelEditing: ->
-      this.set 'bufferedTitle', this.get 'title' 
-      this.set 'isEditing', false
-    removeLocation: ->
-      this.removeLocation
+    toggleFavorite: true
+    moreInfo: true
   }
-  removeLocation: ->
-    location = this.get 'model'
-    location.deleteRecord
-    location.save()
-  +observer isCompleted
-  saveWhenCompleted: ->
-    this.get('model').save
+#  removeLocation: ->
+#    location = this.get 'model'
+#    location.deleteRecord
+#    location.save()
+#  +observer isCompleted
+#  saveWhenCompleted: ->
+#    this.get('model').save
 })
