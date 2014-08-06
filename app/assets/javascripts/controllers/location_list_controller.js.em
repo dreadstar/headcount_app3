@@ -1,9 +1,10 @@
 
 'use strict'
 Headcount.LocationsListController = Ember.ArrayController.extend({
-  needs: 'locations'
+#  needs: 'locations'
 #  allLocations: Ember.computed.alias 'controllers.locations'
   itemController: 'location'
+  sortProperties: ['name']
 #  +computed allLocations.length, @each.isEditing
 #  canToggle: ->
 #    anyLocations = this.get 'allLocations.length'
