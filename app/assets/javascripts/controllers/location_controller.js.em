@@ -6,8 +6,8 @@ Headcount.LocationController = Ember.ObjectController.extend({
 #  bufferedTitle: Ember.computed.oneWay 'title' 
 
   actions: {
-    toggleFavorite: true
-    moreInfo: true
+    # toggleFavorite: true
+    # moreInfo: true
   }
 #  removeLocation: ->
 #    location = this.get 'model'

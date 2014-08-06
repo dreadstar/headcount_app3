@@ -9,14 +9,15 @@ Headcount.Location = DS.Model.extend({
   siteUrl: DS.attr 'string'
   fanscnt: DS.attr 'number'
 ###
-  +computed max_cap current_state
+  +computed maxCap currentState
   heat: ->
-    cs=this.get 'current_state'
-    mc=this.get 'max_cap'
+    cs=this.get 'currentState'
+    mc=this.get 'maxCap'
     if mc < 1 then  mc = 1
     ht=cs/mc
     if ht > 1 then ht = 1
     return ht
+    
   +computed heat
   heatcolor: ->
     hc=Ember.computed.alias 'controllers.locations'
